@@ -12,7 +12,6 @@ bp = Blueprint('users', __name__, url_prefix='/api/users')
 @bp.route('')
 @login_required
 def list_users():
-    app.logger.info(current_user)
     users = []
     for user in User.query:
         # convert to dict
